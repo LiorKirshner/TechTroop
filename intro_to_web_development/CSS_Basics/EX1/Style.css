@@ -1,0 +1,19 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+#hello {
+  color: blue;
+  font-size: 100px;
+}
+
+p {
+  color: chartreuse;
+  font-size: 50px;
+  font-family: "Poppins", sans-serif;
+}
+
+.p2 {
+  color: blueviolet;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 150px;
+}

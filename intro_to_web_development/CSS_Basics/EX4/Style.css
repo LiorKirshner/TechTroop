@@ -1,0 +1,35 @@
+#container {
+  background-color: #bcc0c4;
+  width: fit-content;
+  padding: 20px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.box {
+  display: inline-block; /* חשוב! כדי שיהיו בשורה */
+  width: 40px;
+  height: 40px;
+  background-color: teal;
+  border: 1px solid black;
+}
+
+#second {
+  background-color: chocolate;
+}
+
+.prompt {
+  display: block; /* כל prompt יקפוץ שורה חדשה */
+  margin: 10px 0 5px 0;
+}
+
+input {
+  display: block; /* כדי שיהיו בשורה חדשה */
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block; /* הכפתור נשאר בשורה */
+  background-color: seagreen;
+  border: 1px solid black;
+  padding: 5px 10px;
+}

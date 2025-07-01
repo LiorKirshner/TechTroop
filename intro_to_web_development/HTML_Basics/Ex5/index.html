@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Contact Us</h1>
+
+    <form>
+        <!-- Personal Info -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+        </fieldset>
+
+        <!-- Message Details -->
+        <fieldset>
+            <legend>Message Details</legend>
+
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Technical Support</option>
+                <option value="feedback">Feedback</option>
+            </select>
+
+            <p>Priority:</p>
+            <label class="inline"><input type="radio" name="priority" value="low" required> Low</label>
+            <label class="inline"><input type="radio" name="priority" value="medium"> Medium</label>
+            <label class="inline"><input type="radio" name="priority" value="high"> High</label>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+        </fieldset>
+
+        <!-- Preferences -->
+        <fieldset>
+            <legend>Preferences</legend>
+
+            <label><input type="checkbox" name="subscribe"> Subscribe to our newsletter</label>
+
+            <label for="contact-method">Preferred Contact Method:</label>
+            <select id="contact-method" name="contact-method">
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+            </select>
+        </fieldset>
+
+        <!-- Buttons -->
+        <button type="submit">Send Message</button>
+        <button type="reset">Reset</button>
+    </form>
+
+</body>
+
+</html>

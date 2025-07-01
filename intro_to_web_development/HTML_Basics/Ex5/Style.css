@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  line-height: 1.5;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.inline {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}

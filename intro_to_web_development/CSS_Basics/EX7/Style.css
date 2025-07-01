@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.transparent-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 60px;
+  font-weight: bold;
+  background: white; /* רקע לבן */
+  color: black;
+  mix-blend-mode: difference; /* יוצר אפקט חיתוך */
+  padding: 5px 15px;
+}
+
+.solid-title {
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  font-size: 60px;
+  color: white;
+  background: black;
+  padding: 5px 15px;
+}

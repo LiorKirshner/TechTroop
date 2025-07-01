@@ -1,0 +1,4 @@
+.container {
+  display: flex; /* Flexbox! */
+  gap: 50px; /* רווח בין הקופסאות */
+}

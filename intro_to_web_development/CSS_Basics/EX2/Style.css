@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  display: flex; /* Flexbox! */
+  gap: 20px; /* רווח בין הקופסאות */
+}
+
+.boxx {
+  width: 100px;
+  height: 100px;
+  background-color: #e74c3c;
+  color: white;
+  text-align: center;
+  line-height: 100px; /* למרכז טקסט אנכית */
+
+  cursor: pointer;
+}
