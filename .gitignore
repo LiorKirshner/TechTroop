@@ -1,0 +1,15 @@
+# קבצים של macOS
+.DS_Store
+
+# תיקיות npm
+node_modules/
+
+# קבצי לוג זמניים
+*.log
+
+# קבצי מערכת VS Code
+.vscode/
+
+# תיקיות בנייה
+dist/
+build/
