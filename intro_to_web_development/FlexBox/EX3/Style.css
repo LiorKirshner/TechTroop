@@ -1,0 +1,24 @@
+.FlexBox_container {
+  display: flex;
+  height: 500px;
+  border: 2px solid gray;
+  gap: 0;
+}
+
+.Flex {
+  flex: 1;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball {
+  width: 150px;
+  height: 150px;
+  background-color: #6699ee;
+  border-radius: 50%;
+  margin: auto;
+  width: 40%;
+  text-align: center;
+}

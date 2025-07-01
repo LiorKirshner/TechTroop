@@ -1,0 +1,22 @@
+.FlexBox_container {
+  display: flex;
+  border: 2px solid gray;
+  margin-bottom: 100px;
+}
+
+.FlexBox {
+  background-color: rgb(61, 61, 223);
+  min-height: 100px;
+  margin: 2px;
+  flex-grow: 1;
+  text-align: left;
+  font-size: large;
+}
+
+.FlexBox {
+  flex-grow: 1;
+}
+
+.FlexBox.large {
+  flex-grow: 2;
+}
