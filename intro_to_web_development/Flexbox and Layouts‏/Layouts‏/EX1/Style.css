@@ -1,0 +1,67 @@
+header {
+  background: linear-gradient(to right, #5c47b0, #7a6fd9);
+  padding: 20px;
+  text-align: center;
+}
+
+header > h1 {
+  color: white;
+  text-align: left;
+  padding: 10px;
+  font: 1.5em sans-serif;
+}
+.layout {
+  flex: 1;
+  display: flex;
+  min-height: 400px;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* שמאל */
+.layout > .left {
+  font: 1em sans-serif;
+  flex: 1;
+  background-color: #f5f6fa;
+  padding: 10px;
+}
+
+.left > nav {
+  margin-left: 10%;
+  margin-top: 5px;
+  display: block;
+}
+
+/* מרכז */
+.center {
+  flex: 2;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.center > .boxx {
+  background-color: #f5f6fa;
+  width: 100%;
+}
+
+/* ימין */
+.right {
+  flex: 1;
+  background-color: #f5f6fa;
+  padding: 10px;
+}
+
+.right > .boxx {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+
+/* footer */
+footer {
+  background-color: #2c2c2c;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
