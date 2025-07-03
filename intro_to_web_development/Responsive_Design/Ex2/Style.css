@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  padding: 40px;
+}
+
+/* Mobile: < 600px */
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 14px;
+}
+
+/* Tablet: 600px–900px */
+@media (min-width: 600px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Desktop: > 900px */
+@media (min-width: 900px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
