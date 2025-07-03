@@ -1,0 +1,13 @@
+@media (width > 768px) {
+  body {
+    width: 300px;
+    background-color: blue;
+  }
+}
+
+@media (width <= 768px) {
+  body {
+    width: 100%;
+    background-color: red;
+  }
+}
