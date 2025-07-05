@@ -391,3 +391,8 @@ body {
   font-size: 0.9rem;
   bottom: 0;
 }
+
+.action-btn:hover {
+  background-color: #2471a3; /* כחול כהה יותר */
+  transform: scale(0.98); /* לחיצה קטנה פנימה - תחושת קליק */
+}
