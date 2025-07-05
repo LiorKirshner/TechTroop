@@ -93,6 +93,8 @@ body {
 }
 
 .user-info {
+  display: flex;
+  align-items: center; /* 4.מיישר אנכית */
   gap: 1rem;
 }
 
