@@ -367,6 +367,9 @@ body {
   background-color: #f8f9fa;
   border-radius: 0 6px 6px 0;
   margin-bottom: 1rem;
+  position: relative;
+  border-left: 4px solid #3498db; /* הפס הכחול למעלה */
+}
 }
 
 .notification-item h5 {
