@@ -331,12 +331,15 @@ body {
 
 .member-avatar {
   height: 36px;
+  width: 36px;
   border-radius: 50%;
   background-color: #3498db;
   display: flex;
   color: white;
   font-weight: bold;
   font-size: 0.9rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .member-info h5 {
