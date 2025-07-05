@@ -297,6 +297,7 @@ body {
 }
 
 .progress-bar {
+  height: 8px;
   width: 100%;
   background-color: #e9ecef;
   border-radius: 4px;
