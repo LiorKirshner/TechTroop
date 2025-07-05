@@ -108,6 +108,8 @@ body {
 }
 
 .stats-grid {
+  display: flex; /*same line*/
+  margin-bottom: 2rem;
   gap: 1.5rem;
 }
 
@@ -128,6 +130,13 @@ body {
 .stat-label {
   color: #7f8c8d;
   font-size: 0.9rem;
+}
+.left-column {
+  flex: 2; /* ייקח פי 2 יותר מקום */
+}
+
+.right-column {
+  flex: 1;
 }
 
 .dashboard-grid {
