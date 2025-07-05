@@ -52,7 +52,7 @@
 
 .home_containar {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   padding: 2rem;
   gap: 1rem;
@@ -61,7 +61,7 @@
 }
 @media (min-width: 600px) {
   .home_containar {
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: left;
@@ -85,4 +85,19 @@
 
 .home-text {
   max-width: 500px;
+}
+
+.get_in_touch {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #2562ee;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
+
+.get_in_touch:hover {
+  background-color: #1e4dcc;
 }
