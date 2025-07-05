@@ -1,0 +1,88 @@
+/* mobile first */
+/* ברירת מחדל: תפריט מוצג */
+.desktop-only {
+  display: none;
+}
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  color: #6892ec;
+  font-weight: bold;
+}
+
+.home a {
+  background-color: #2562ee;
+  color: #99b5f1;
+  text-decoration: none;
+}
+
+.home-background {
+  background-image: url("assets/home_back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 600px) {
+  .desktop-only {
+    display: flex;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav ul li a {
+    color: #a7b0bd;
+    text-decoration: none;
+  }
+
+  .nav ul li a:hover {
+    color: #6892ec;
+  }
+}
+
+.home_containar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .home_containar {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+
+  .profile-image {
+    margin-right: 2rem;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-text {
+  max-width: 500px;
+}
