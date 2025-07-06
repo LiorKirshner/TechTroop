@@ -102,13 +102,24 @@
   background-color: #1e4dcc;
 }
 
-.about_container {
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+.projects {
   display: flex;
   gap: 2rem; /* רווח בין הכותרת לטקסט */
   align-items: center; /* ליישור לגובה אחיד */
 }
+.project {
+  width: calc(100% / 3 - 1rem); /* שליש מהמרחב עם רווח */
+}
 
 @media (max-width: 700px) {
+  .project {
+    width: 100%; /* פרויקט אחד בשורה */
+  }
   .about_container {
     flex-direction: column; /* עיצוב לעמודות בטלפון */
     text-align: center; /* יישור טקסט למרכז */
