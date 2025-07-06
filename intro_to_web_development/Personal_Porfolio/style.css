@@ -21,7 +21,7 @@
   text-decoration: none;
 }
 
-.home-background {
+.blue-background {
   background-image: url("assets/home_back.png");
   background-size: cover;
   background-position: center;
@@ -100,4 +100,17 @@
 
 .get_in_touch:hover {
   background-color: #1e4dcc;
+}
+
+.about_container {
+  display: flex;
+  gap: 2rem; /* רווח בין הכותרת לטקסט */
+  align-items: center; /* ליישור לגובה אחיד */
+}
+
+@media (max-width: 700px) {
+  .about_container {
+    flex-direction: column; /* עיצוב לעמודות בטלפון */
+    text-align: center; /* יישור טקסט למרכז */
+  }
 }
