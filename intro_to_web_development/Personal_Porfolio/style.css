@@ -128,3 +128,11 @@
     text-align: center; /* יישור טקסט למרכז */
   }
 }
+
+footer {
+  background-color: #171f2d;
+  padding: 2rem;
+  text-align: center;
+  color: whitesmoke;
+  font: 1.5em sans-serif;
+}
