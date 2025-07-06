@@ -114,9 +114,21 @@
   display: flex;
   gap: 2rem; /* רווח בין הכותרת לטקסט */
   align-items: center; /* ליישור לגובה אחיד */
+  justify-content: center; /* יישור התוכן למרכז */
 }
 .project {
+  background-color: white; /* רקע לבן */
   width: calc(100% / 3 - 1rem); /* שליש מהמרחב עם רווח */
+}
+
+.project-image {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto; /* יישור התמונה למרכז */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .about_container {
