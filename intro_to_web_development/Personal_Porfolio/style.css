@@ -11,10 +11,12 @@
 }
 
 .logo {
-  color: #6892ec;
-  font-weight: bold;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #2562ee;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
 }
-
 .home a {
   background-color: #2562ee;
   color: #99b5f1;
