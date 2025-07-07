@@ -263,3 +263,29 @@ footer {
   text-align: center;
   width: fit-content;
 }
+
+/* <!-- Contact Section --> */
+.contact_container {
+  display: block;
+}
+
+.contact_container > h2 {
+  display: block;
+  width: 100%;
+}
+
+.contact_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact_form {
+  width: 70%;
+  margin-right: 2rem;
+}
+.information {
+  width: 28%;
+  text-align: left;
+}
