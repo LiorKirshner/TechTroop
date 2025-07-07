@@ -24,9 +24,13 @@
   align-items: center;
   padding: 1rem;
 }
-
+.home-text > h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
 .logo {
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: 700;
   color: #2562ee;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -68,7 +72,7 @@
 }
 
 .home_container > img {
-  margin-left: 10rem;
+  margin-left: 5rem;
 }
 @media (max-width: 600px) {
   .home_container > img {
@@ -83,11 +87,6 @@
   object-fit: cover;
   border: 4px solid white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.home-text {
-  max-width: 500px;
-  padding-bottom: 1.5rem;
 }
 
 .get_in_touch {
@@ -144,6 +143,7 @@
     width: 65%; /* חצי מהמרחב */
   }
 
+  .home-text > p,
   .about_container > .about > p {
     width: 65%;
     font-size: 1.2em;
@@ -207,4 +207,33 @@ footer {
   height: 100%;
   background-color: #2562ee;
   border-radius: 4px;
+  width: 100%;
+}
+.skill-fill.skill-html {
+  max-width: 80%;
+}
+
+.skill-fill.skill-react {
+  max-width: 85%;
+}
+
+.skill-fill.skill-python {
+  max-width: 90%;
+}
+
+.skill-fill.skill-sql {
+  max-width: 75%;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.skills li span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
 }
