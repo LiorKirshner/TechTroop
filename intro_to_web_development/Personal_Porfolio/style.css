@@ -140,15 +140,18 @@
 .about > h2 {
   text-align: left !important;
 }
-
+.about {
+  width: 70%; /* חצי מהמרחב */
+}
+.skills {
+  width: 30%; /* שליש מהמרחב */
+}
 @media (min-width: 600px) {
   .about_container > .about {
     width: 65%; /* חצי מהמרחב */
   }
 
-  .home-text > p,
-  .about_container > .about > p,
-  .button {
+  p {
     width: 65%;
     font-size: 1.2em;
     line-height: 1.6;
@@ -271,12 +274,6 @@ footer {
 /* <!-- Contact Section --> */
 .contact_container {
   display: flex;
-}
-
-.getintouch {
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 2rem;
 }
 
 .contact_form {
