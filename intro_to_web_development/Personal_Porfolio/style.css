@@ -121,8 +121,8 @@
 }
 
 .project-image {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
   margin: 0 auto; /* יישור התמונה למרכז */
@@ -236,4 +236,30 @@ footer {
   align-items: center;
   gap: 0.5rem;
   flex: 1;
+}
+
+.projects p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #4a5568; /* צבע טקסט */
+  margin-left: 1rem;
+  width: 90%; /* הגדרת רוחב קבוע */
+}
+.project h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.project > a {
+  display: block;
+  margin: 1rem auto 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #f18d0e;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  width: fit-content;
 }
