@@ -104,6 +104,14 @@
   background-color: #1e4dcc;
 }
 
+@media (max-width: 600px) {
+  .get_in_touch {
+    margin-bottom: 2rem; /* מרווח מהתמונה */
+    margin-top: 1rem; /* אפשרי */
+    margin: 1rem auto 2rem auto;
+  }
+}
+
 .box-container {
   display: flex;
   flex-wrap: wrap;
@@ -138,7 +146,7 @@
   padding: 2rem;
 }
 .about > h2 {
-  text-align: left !important;
+  text-align: left;
 }
 .about {
   width: 70%; /* חצי מהמרחב */
@@ -147,6 +155,9 @@
   width: 30%; /* שליש מהמרחב */
 }
 @media (min-width: 600px) {
+  h2 {
+    text-align: center !important;
+  }
   .about_container > .about {
     width: 65%; /* חצי מהמרחב */
   }
@@ -241,8 +252,8 @@ footer {
 .skills li span {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  flex: 1;
 }
 
 .projects p {
@@ -312,4 +323,31 @@ h2 {
 .information h3 {
   font-size: 1.5em;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 700px) {
+  .about {
+    width: 100%;
+  }
+
+  .skills {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .skills li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skills li span {
+    justify-content: center;
+    flex: unset;
+  }
+
+  .skill-bar {
+    width: 90%;
+    margin-top: 0.5rem;
+  }
 }
