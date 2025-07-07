@@ -145,8 +145,10 @@
   text-align: left;
   padding: 2rem;
 }
-.about > h2 {
-  text-align: left;
+@media (min-width: 700px) {
+  .about > h2 {
+    text-align: left !important;
+  }
 }
 .about {
   width: 70%; /* חצי מהמרחב */
