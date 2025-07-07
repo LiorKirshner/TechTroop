@@ -137,6 +137,9 @@
   text-align: left;
   padding: 2rem;
 }
+.about > h2 {
+  text-align: left !important;
+}
 
 @media (min-width: 600px) {
   .about_container > .about {
@@ -144,7 +147,8 @@
   }
 
   .home-text > p,
-  .about_container > .about > p {
+  .about_container > .about > p,
+  .button {
     width: 65%;
     font-size: 1.2em;
     line-height: 1.6;
@@ -266,26 +270,49 @@ footer {
 
 /* <!-- Contact Section --> */
 .contact_container {
-  display: block;
-}
-
-.contact_container > h2 {
-  display: block;
-  width: 100%;
-}
-
-.contact_content {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+}
+
+.getintouch {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 2rem;
 }
 
 .contact_form {
-  width: 70%;
-  margin-right: 2rem;
+  width: 60%;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.contact_form .form-group {
+  margin-bottom: 1.5rem;
 }
 .information {
   width: 28%;
   text-align: left;
+}
+.contact_form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.contact_form input[type="text"],
+.contact_form input[type="email"],
+.contact_form textarea {
+  width: 90%;
+  box-sizing: border-box;
+}
+.contact_form textarea {
+  min-height: auto;
+}
+
+h2 {
+  font-size: 2em !important;
+  margin-bottom: 1rem !important;
+  text-align: center;
+}
+
+.information h3 {
+  font-size: 1.5em;
+  margin-bottom: 1rem;
 }
