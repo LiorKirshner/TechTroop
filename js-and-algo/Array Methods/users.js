@@ -258,3 +258,40 @@ console.log(zipcode5);
 
 console.log("---------");
 console.log("EX4");
+/*Create an array of only names, then only keep the names that start with with the letter "C".
+You should be left with ["Clementine Bauch", "Chelsey Dietrich", "Clementia DuBuque"]*/
+
+const names_array = users.map((a) => a.name).filter((a) => a.startsWith("C"));
+console.log(names_array);
+
+/*Determine whether all of the users live in the city of "South Christy" - 
+you should find the answer to be false in a single, beautiful line of code.*/
+console.log("---------");
+console.log("EX5");
+const south_live = users.every((c) => c.address.city == "South Christy");
+console.log(south_live);
+
+console.log("---------");
+console.log("EX6");
+/*Find the user who's suite is "Apt. 950" - console log her company's name.
+Your code should print out "Considine-Lockman".*/
+console.log(users.find((u) => u.address.suite === "Apt. 950")?.company.name);
+
+console.log("---------");
+console.log("EX7");
+/*Write a named function that receives a single parameter, user.
+Using forEach and the named function you just wrote, 
+console log "NAME lives in CITY, and owns the company COMPANY_NAME" for each user.*/
+
+const to_upper = function (user) {
+  console.log(
+    user.name.toUpperCase() +
+      " lives in " +
+      user.address.city.toUpperCase() +
+      ", and owns the company " +
+      user.company.name.toUpperCase() +
+      "."
+  );
+};
+
+users.forEach(to_upper);
