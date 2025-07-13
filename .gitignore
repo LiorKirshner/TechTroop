@@ -13,3 +13,5 @@ node_modules/
 # תיקיות בנייה
 dist/
 build/
+.vscode
+node_modules
