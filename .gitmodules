@@ -1,0 +1,3 @@
+[submodule "js-and-algo/matrices-lesson-exercises"]
+  path = js-and-algo/matrices-lesson-exercises
+  url = git@github.com:LiorKirshner/matrices-lesson-exercises.git
