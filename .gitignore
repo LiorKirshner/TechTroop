@@ -9,6 +9,7 @@ node_modules/
 
 # קבצי מערכת VS Code
 .vscode/
+!src/Matrix.js
 
 # תיקיות בנייה
 dist/
