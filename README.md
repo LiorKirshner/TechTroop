@@ -1,3 +1,4 @@
+<img src="intro_to_web_development/Tech-Troop_fetured-images-.jpg" alt="banner" width="100%" />
 # TechTroop Full Stack Bootcamp 🚀
 
 This repository documents my personal progress in the TechTroop Full Stack Developer Program.
