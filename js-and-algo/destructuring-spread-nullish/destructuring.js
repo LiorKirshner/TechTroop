@@ -1,5 +1,10 @@
-let facts = { numPlanets: 8, yearNeptuneDiscovered: 1846 };
-//let { numPlanets, yearNeptuneDiscovered } = facts;
+function getUserData({ firstName, favoriteColor = "green" }) {
+  return `Your name is ${firstName} and you like ${favoriteColor}`;
+}
 
-console.log(facts); // ?
-console.log(facts.yearNeptuneDiscovered); // ?
+getUserData({ firstName: "Alejandro", favoriteColor: "purple" }); // ?
+getUserData({ firstName: "Melissa" }); // ?
+getUserData({}); // ?
+
+//alejan , purple
+//mel, green
