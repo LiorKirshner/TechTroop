@@ -10,13 +10,14 @@
   "devDependencies": {
     "babel-plugin-react-html-attrs": "^2.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "jest": "^23.4.2",
-    "jest-transform-stub": "^1.0.0",
+    "jest": "^23.6.0",
+    "jest-expect-message": "github:Elevationacademy/jest-expect-message",
     "jest-test-runner": "git+https://github.com/Elevationacademy/jest-test-runner.git",
-    "jest-expect-message": "github:Elevationacademy/jest-expect-message"
+    "jest-transform-stub": "^1.0.0"
   },
   "scripts": {
     "test-silent": "jest --runInBand || exit 0",
-    "tests": "tests --runInBand"
+    "tests": "tests --runInBand",
+    "test": "jest"
   }
 }
