@@ -15,4 +15,4 @@ This repository documents my personal progress in the TechTroop Full Stack Devel
 - MySQL, REST API
 - Git, GitHub, ChatGPT, GitHub Copilot
 
-## 📁 Folder Structure Example
+
