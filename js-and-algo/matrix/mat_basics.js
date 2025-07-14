@@ -2,7 +2,7 @@ class Matrix {
   constructor(dimensions) {
     this.Matrix = this.generateMatrix(dimensions);
   }
-
+  //ds
   generateMatrix(dimension) {
     let mat = [];
     let count = 1;
