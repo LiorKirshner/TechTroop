@@ -17,9 +17,7 @@ function performanceCheck(person) {
 }
 
 people.forEach(performanceCheck);
-
 people.forEach((p) => console.log(p.salary)); // 1300, 1800, 1500, 1700, 1900
-
 
 let users = [
   {
@@ -43,10 +41,11 @@ let users = [
     },
   },
 ];
-console.log(users.map((u) => {
-  return { name: u.name, city: u.address.city };
-}));
-
+console.log(
+  users.map((u) => {
+    return { name: u.name, city: u.address.city };
+  })
+);
 
 let movies = [
   { title: "Dareangel", studio: "Marvel", year: 2023 },
@@ -54,8 +53,3 @@ let movies = [
   { title: "League of Ordinary People", studio: "Blizzard", year: 2025 },
   { title: "Thor: Ragnarok", studio: "Marvel", year: 2017 },
 ];
-
-
-
-
-
