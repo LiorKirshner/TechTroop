@@ -1,0 +1,23 @@
+{
+  "name": "tech_troop",
+  "version": "1.0.0",
+  "description": "<img src=\"intro_to_web_development/Tech-Troop_fetured-images-.jpg\" alt=\"banner\" width=\"100%\" /> # TechTroop Full Stack Bootcamp 🚀",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiorKirshner/TechTroop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiorKirshner/TechTroop/issues"
+  },
+  "homepage": "https://github.com/LiorKirshner/TechTroop#readme",
+  "devDependencies": {
+    "jest": "^30.0.4"
+  }
+}
