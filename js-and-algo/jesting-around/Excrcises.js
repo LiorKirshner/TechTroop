@@ -19,4 +19,19 @@ function simplify(str) {
     .join("");
 }
 
-module.exports = { isEven, removeAtLeastOne, simplify };
+const validator = {
+  validate(boolArray) {
+    let onlyBools = boolArray.filter((v) => typeof v === "boolean");
+
+    if (onlyBools.length === 0) {
+      throw new Error("Array must contain at least one boolean");
+    }
+
+    let trueCount = onlyBools.filter((v) => v === true).length;
+    let falseCount = onlyBools.filter((v) => v === false).length;
+
+    return trueCount > falseCount;
+  },
+};
+
+module.exports = { isEven, removeAtLeastOne, simplify, validator };
