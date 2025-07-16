@@ -1,6 +1,4 @@
-//const { describe } = require("node:test");
-//const { describe } = require("node:test");
-const { isEven, removeAtLeastOne } = require("./Excrcises");
+const { isEven, removeAtLeastOne, simplify } = require("./Excrcises");
 
 describe("should return true if n is even, false otherwise", () => {
   test("returns true for even number", () => {
@@ -37,5 +35,25 @@ describe("removeAtLeastOne", () => {
     let arrCopy = [...arr];
     removeAtLeastOne(arr);
     expect(arr).not.toEqual(arrCopy);
+  });
+});
+
+describe("simplify", () => {
+  test("returns empty string or error for non-string input", () => {
+    expect(() => simplify(["l!io####r,"])).toThrow(); // אם אתה רוצה שהיא תזרוק שגיאה
+  });
+
+  test("should return a clean string - lior", () => {
+    let word = simplify("l!io####r,");
+    expect(word).toEqual("lior");
+  });
+
+  test("should return a empty string ", () => {
+    let word = simplify("####,");
+    expect(word).toHaveLength(0);
+  });
+  test("should return a empty string ", () => {
+    let word = simplify("");
+    expect(word).toHaveLength(0);
   });
 });
