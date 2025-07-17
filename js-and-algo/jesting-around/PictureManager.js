@@ -8,7 +8,10 @@ class PictureManager {
   }
 
   removePicture(picURL) {
-    this.pictureURLs.splice(this.pictureURLs.indexOf(picURL), 1);
+    const index = this.pictureURLs.indexOf(picURL);
+    if (index !== -1) {
+      this.pictureURLs.splice(index, 1);
+    }
   }
 }
 
