@@ -25,9 +25,18 @@ class Manager {
   }
 
   // invokes the employees Work function
-  askEmployeesToWork() {
+  askEmployeesToWork(name) {
     for (let employer of this.employees) {
       employer.work();
     }
+  }
+}
+
+class Cleaner {
+  constructor(name) {
+    this.name = name;
+  }
+  clean() {
+    console.log("Clean");
   }
 }
