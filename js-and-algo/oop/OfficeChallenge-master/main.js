@@ -47,4 +47,10 @@ class Office {
     this.managers = [];
     this.cleaners = [];
   }
+  hireManager(manager) {
+    this.managers.push(new Manager(manager));
+  }
+  hireCleaner(cleaner) {
+    this.cleaners.push(new Cleaner(cleaner));
+  }
 }
