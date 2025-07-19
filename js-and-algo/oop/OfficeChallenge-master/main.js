@@ -25,7 +25,9 @@ class Manager {
   }
 
   // invokes the employees Work function
-  askEmployeesToWork(name) {
-    name.work();
+  askEmployeesToWork() {
+    for (let employer of this.employees) {
+      employer.work();
+    }
   }
 }
