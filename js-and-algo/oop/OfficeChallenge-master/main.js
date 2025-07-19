@@ -40,3 +40,11 @@ class Cleaner {
     console.log("Clean");
   }
 }
+
+class Office {
+  constructor() {
+    this.documents = [];
+    this.managers = [];
+    this.cleaners = [];
+  }
+}
