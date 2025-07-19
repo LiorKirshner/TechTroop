@@ -10,7 +10,11 @@ class Employee {
   constructor(name) {
     this.name = name;
   }
-  work() {}
+  work(office) {
+    for (let i = 1; i <= 10; i++) {
+      office.documents.push(new Document(this.name));
+    }
+  }
 }
 
 class Manager {
@@ -25,9 +29,9 @@ class Manager {
   }
 
   // invokes the employees Work function
-  askEmployeesToWork(name) {
+  askEmployeesToWork(office) {
     for (let employer of this.employees) {
-      employer.work();
+      employer.work(office);
     }
   }
 }
@@ -52,5 +56,10 @@ class Office {
   }
   hireCleaner(cleaner) {
     this.cleaners.push(new Cleaner(cleaner));
+  }
+  startWorkDay() {
+    this.managers.forEach((manager) => {
+      manager.askEmployeesToWork(this);
+    });
   }
 }
