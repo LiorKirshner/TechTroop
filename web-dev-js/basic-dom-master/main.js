@@ -3,14 +3,27 @@ const move = function (direction) {
   const computedStyle = window.getComputedStyle(ball);
   let index;
 
-  if (direction === "left" || direction === "right") {
-    index = parseInt(computedStyle.left) || 0;
-    index += direction === "right" ? 15 : -15;
-    ball.style.left = index + "px";
-  } else {
-    index = parseInt(computedStyle.top) || 0;
-    index += direction === "down" ? 15 : -15;
-    ball.style.top = index + "px";
+  switch (direction) {
+    case "left":
+      index = parseInt(computedStyle.left) || 0;
+      index -= 15;
+      ball.style.left = index + "px";
+      break;
+    case "right":
+      index = parseInt(computedStyle.left) || 0;
+      index += 15;
+      ball.style.left = index + "px";
+      break;
+    case "up":
+      index = parseInt(computedStyle.top) || 0;
+      index -= 15;
+      ball.style.top = index + "px";
+      break;
+    case "down":
+      index = parseInt(computedStyle.top) || 0;
+      index += 15;
+      ball.style.top = index + "px";
+      break;
   }
 };
 
