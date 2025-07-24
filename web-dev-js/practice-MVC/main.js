@@ -1,15 +1,34 @@
 let posts = [];
 
-const container = document.getElementById("posts-container");
+function render() {
+  const container = document.getElementById("posts-container");
+  container.innerHTML = ""; // מנקה לפני הרינדור
 
-function render(posts) {
   for (let i = 0; i < posts.length; i++) {
     const post = document.createElement("div");
-    post.setAttribute("class", "post");
+    post.classList.add("post-show");
     post.innerHTML = `<strong>${posts[i].name}:</strong> ${posts[i].text}`;
-
+    post.addEventListener("click", function () {
+      posts.splice(i, 1); // הסר את הפוסט מהמערך
+      render(); // רנדר מחדש
+    });
     container.appendChild(post);
   }
 }
 
-on Event
+document
+  .getElementById("submitBtn")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // מונע רענון הדף
+
+    const name = document.getElementById("name").value.trim();
+    const text = document.getElementById("post").value.trim();
+
+    if (name && text) {
+      posts.push({ name, text });
+      render();
+      // נקה את השדות
+      document.getElementById("name").value = "";
+      document.getElementById("post").value = "";
+    }
+  });
