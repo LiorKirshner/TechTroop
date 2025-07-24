@@ -1,11 +1,46 @@
 #container {
   display: flex;
-  gap: 10px;
+  justify-content: center; /* ממרכז את השורה אופקית */
+  align-items: center; /* ממרכז את השורה אנכית */
 }
 
 .box {
-  width: 100px;
-  height: 100px;
+  margin-top: 150px;
+  width: 150px;
+  height: 150px;
   background-color: whitesmoke;
   border: 1px solid black;
+}
+
+#box-message {
+  margin-top: 30px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #0f0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#box-message.show {
+  opacity: 1;
+  animation: glow 1s infinite alternate, pop 0.5s ease-in-out;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px gold, 0 0 10px gold;
+  }
+  to {
+    text-shadow: 0 0 20px gold, 0 0 40px gold;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
