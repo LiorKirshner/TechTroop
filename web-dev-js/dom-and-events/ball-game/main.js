@@ -27,6 +27,23 @@ const move = function (direction) {
   }
 };
 
+document.addEventListener("keydown", function (event) {
+  switch (event.key) {
+    case "ArrowUp":
+      move("up");
+      break;
+    case "ArrowDown":
+      move("down");
+      break;
+    case "ArrowLeft":
+      move("left");
+      break;
+    case "ArrowRight":
+      move("right");
+      break;
+  }
+});
+
 const header = document.createElement("h1");
 header.innerHTML = "The Best Game Ever";
 header.style.color = "#c0392b";
