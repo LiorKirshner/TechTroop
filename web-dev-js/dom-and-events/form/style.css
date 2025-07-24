@@ -28,3 +28,8 @@ form {
   display: flex;
   flex-direction: column;
 }
+#error-messages {
+  color: red;
+  margin-bottom: 10px;
+  white-space: pre-line;
+}
