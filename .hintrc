@@ -11,6 +11,12 @@
           "user-select"
         ]
       }
+    ],
+    "axe/language": [
+      "default",
+      {
+        "html-has-lang": "off"
+      }
     ]
   }
 }
