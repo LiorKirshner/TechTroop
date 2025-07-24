@@ -33,3 +33,11 @@ form {
   margin-bottom: 10px;
   white-space: pre-line;
 }
+
+#welcome-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}

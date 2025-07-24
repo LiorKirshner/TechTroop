@@ -6,7 +6,8 @@ function validate(event) {
   const birthday = document.getElementById("birthday").value;
   const phone = document.getElementById("phone").value.trim();
   const errorBox = document.getElementById("error-messages");
-
+  const form = document.querySelector("form");
+  const welcomeBox = document.getElementById("welcome-message");
   let errors = [];
 
   if (name.length < 3) {
@@ -29,7 +30,9 @@ function validate(event) {
     errorBox.textContent = errors.join("\n");
   } else {
     errorBox.textContent = "";
-    alert("Form submitted successfully!");
+    form.style.display = "none"; // מעלים את הטופס
+    welcomeBox.style.display = "block";
+    welcomeBox.textContent = `Welcome, ${name}!`; // הודעה אישית
   }
 }
 
