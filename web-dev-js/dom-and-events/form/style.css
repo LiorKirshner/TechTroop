@@ -1,0 +1,30 @@
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* צבע כללי לרקע העמוד */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-box {
+  background-color: #1fb18a;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.inline-row {
+  display: flex;
+  gap: 20px;
+}
+
+.inline-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
