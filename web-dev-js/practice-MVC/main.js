@@ -8,10 +8,10 @@ function render() {
     const post = document.createElement("div");
     post.classList.add("post-show");
     post.innerHTML = `<strong>${posts[i].name}:</strong> ${posts[i].text}`;
-    post.addEventListener("click", function () {
+    post.onclick = function () {
       posts.splice(i, 1); // הסר את הפוסט מהמערך
       render(); // רנדר מחדש
-    });
+    };
     container.appendChild(post);
   }
 }
