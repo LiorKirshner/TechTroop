@@ -45,6 +45,27 @@ async function testProbability(numRolls) {
     .join(" | ");
   console.log(dist);
 }
+//testProbability(100); // Test 100 rolls
+//testProbability(1000); // Test 1000 rolls
 
-testProbability(100); // Test 100 rolls
-testProbability(1000); // Test 1000 rolls
+function oldAsyncFunction(callback) {
+  setTimeout(() => {
+    if (Math.random() > 0.5) {
+      callback(null, "Success");
+    } else {
+      callback(new Error("Failed"));
+    }
+  }, 1000);
+}
+
+function newAsyncFunction() {
+  return new Promise((resolve, reject) => {
+    oldAsyncFunction((err, result) => {
+      if (err) reject(err);
+      else resolve(result);
+    });
+  });
+}
+newAsyncFunction()
+  .then((res) => console.log("✅", res))
+  .catch((err) => console.error("❌", err.message));
