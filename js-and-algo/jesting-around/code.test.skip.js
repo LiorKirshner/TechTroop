@@ -6,6 +6,26 @@ describe("calc tests", () => {
     let sum = calc.add(1, 2);
     expect(sum).toBe(3);
   });
+
+  test("add should return correct sum with 0 and a positive number", () => {
+    expect(calc.add(0, 7)).toBe(7);
+  });
+
+  test("add should return correct sum with 0 and a negative number", () => {
+    expect(calc.add(-8, 0)).toBe(-8);
+  });
+
+  test("add should return correct sum with two negative numbers", () => {
+    expect(calc.add(-5, -6)).toBe(-11);
+  });
+
+  test("add should return 0 when adding two zeroes", () => {
+    expect(calc.add(0, 0)).toBe(0);
+  });
+
+  test("add should handle decimal numbers correctly", () => {
+    expect(calc.add(2.5, 3.2)).toBeCloseTo(5.7);
+  });
   test("return the square root of the sum of the numbers", () => {
     let sqr = calc.calculateHyp(3, 4);
     expect(sqr).toBe(5);
