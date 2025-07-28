@@ -1,3 +1,5 @@
+const { describe } = require("node:test");
+
 const getRandomWord = function () {
   let words = [
     "Bonanza",
@@ -70,4 +72,33 @@ const getSentimentDescription = function (sentiment) {
     : "Neutral";
 };
 
-getRandomWord().then((res) => console.log("✅", res));
+// getRandomWord()
+//   .then((word) => {
+//     return getSynonyms(word);
+//   })
+//   .then((synonyms) => {
+//     return getSentiment(synonyms);
+//   })
+//   .then((description) => {
+//     return getSentimentDescription(description);
+//   })
+//   .then((sentiment) => {
+//     console.log(sentiment);
+//   });
+let word = null;
+
+getRandomWord()
+  .then((wordParam) => {
+    word = wordParam;
+    let synonymsPromise = getSynonyms(word);
+    let sentimentPromise = getSentiment(word);
+    return Promise.all([synonymsPromise, sentimentPromise]);
+  })
+  .then((promiseResults) => {
+    // The first item in the array is our synonyms array, and the second is the sentiment for the word we got.
+    let [synonyms, sentiment] = promiseResults;
+    const sentimentDescription = getSentimentDescription(sentiment);
+    console.log(
+      `The word ${word} has a ${sentimentDescription} sentiment and synonyms ${synonyms}`
+    );
+  });
