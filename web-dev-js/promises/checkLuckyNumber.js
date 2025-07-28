@@ -12,13 +12,13 @@ function checkLuckyNumber(num) {
           return "Not lucky";
         }
       })
-      .then((result) => {
-        resolve(console.log(result));
-      })
+      .then((result) => resolve(result))
       .catch((error) => {
         reject(error);
       });
   });
 }
 
-checkLuckyNumber(5);
+checkLuckyNumber(77)
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error.message));
