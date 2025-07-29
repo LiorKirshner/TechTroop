@@ -1,3 +1,6 @@
+const { rejects, match } = require("assert");
+const { resolve } = require("path");
+
 // Simulated inventory database
 const inventory = {
   laptop: { price: 999, stock: 5 },
@@ -25,15 +28,29 @@ function checkInventory(items) {
   });
 }
 
-checkInventory(["laptop", "mouse"])
-  .then((result) => console.log("Order success:", result))
-  .catch((error) => console.log("Order failed:", error.message));
-
 function calculateTotal(items) {
   // TODO: Return a promise that:
-  // 1. Waits 200ms
+
   // 2. Calculates total price including 8% tax
   // 3. Resolves with { subtotal, tax, total }
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      try {
+        let subtotal = 0;
+        for (let item of items) {
+          if (!inventory[item]) return reject();
+          subtotal += inventory[item].price;
+        }
+
+        const tax = subtotal * 0.08;
+        const total = subtotal + tax;
+
+        resolve({ subtotal, tax, total });
+      } catch (error) {
+        reject(error);
+      }
+    }, 200); // 1. Waits 200ms
+  });
 }
 
 function processPayment(amount) {
@@ -43,12 +60,32 @@ function processPayment(amount) {
   // 3. Resolves with { transactionId, amount, status: 'success' }
   // 4. Rejects with payment failure error
 }
+return new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const successRate = Math.random();
+    if (successRate < 0.9) {
+      // 90% success
+      const transactionId = Math.floor(Math.random() * 1000000);
+      resolve({ transactionId, amount, status: "success" });
+    } else {
+      reject(new Error("Payment failure")); // 10% chance of failure
+    }
+  }, 1500); // Simulate payment processing delay
+});
 
 function updateInventory(items) {
   // TODO: Return a promise that:
   // 1. Waits 300ms
   // 2. Reduces stock for each item
   // 3. Resolves with updated inventory status
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      for (let item of items) {
+        inventory[item].stock -= 1;
+      }
+      resolve(inventory);
+    }, 300);
+  });
 }
 
 // TODO: Create a complete checkout function that:
