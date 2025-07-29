@@ -1,6 +1,3 @@
-const { rejects, match } = require("assert");
-const { resolve } = require("path");
-
 // Simulated inventory database
 const inventory = {
   laptop: { price: 999, stock: 5 },
@@ -54,24 +51,19 @@ function calculateTotal(items) {
 }
 
 function processPayment(amount) {
-  // TODO: Return a promise that:
-  // 1. Waits 1500ms (simulating payment processing)
-  // 2. 90% success rate
-  // 3. Resolves with { transactionId, amount, status: 'success' }
-  // 4. Rejects with payment failure error
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const successRate = Math.random();
+      if (successRate < 0.9) {
+        // 90% success
+        const transactionId = Math.floor(Math.random() * 1000000);
+        resolve({ transactionId, amount, status: "success" });
+      } else {
+        reject(new Error("Payment failure")); // 10% chance of failure
+      }
+    }, 1500); // Simulate payment processing delay
+  });
 }
-return new Promise((resolve, reject) => {
-  setTimeout(() => {
-    const successRate = Math.random();
-    if (successRate < 0.9) {
-      // 90% success
-      const transactionId = Math.floor(Math.random() * 1000000);
-      resolve({ transactionId, amount, status: "success" });
-    } else {
-      reject(new Error("Payment failure")); // 10% chance of failure
-    }
-  }, 1500); // Simulate payment processing delay
-});
 
 function updateInventory(items) {
   // TODO: Return a promise that:
@@ -95,7 +87,25 @@ function updateInventory(items) {
 // 4. Handles all possible errors appropriately
 
 function checkout(itemNames) {
-  // TODO: Implement the complete checkout flow
+  let savedPaymentInfo;
+  return checkInventory(itemNames)
+    .then(() => calculateTotal(itemNames))
+    .then((bill) => {
+      return processPayment(bill.total);
+    })
+    .then((paymentInfo) => {
+      savedPaymentInfo = paymentInfo;
+      return updateInventory(itemNames);
+    })
+    .then((updatedInventory) => {
+      return {
+        payment: savedPaymentInfo,
+        inventory: updatedInventory,
+      };
+    })
+    .catch((error) => {
+      console.log("Order failed:", error.message);
+    });
 }
 
 // // Test cases:
@@ -107,6 +117,6 @@ function checkout(itemNames) {
 //   .then((result) => console.log("Order success:", result))
 //   .catch((error) => console.log("Order failed:", error.message));
 
-// checkout(["monitor", "mouse", "laptop"]) // Might fail at payment (10% chance)
-//   .then((result) => console.log("Order success:", result))
-//   .catch((error) => console.log("Order failed:", error.message));
+checkout(["monitor", "mouse", "laptop"]) // Might fail at payment (10% chance)
+  .then((result) => console.log("Order success:", result))
+  .catch((error) => console.log("Order failed:", error.message));
