@@ -26,3 +26,4 @@ coverage/
 # Temporary
 *.swp
 *.tmp
+gif/config.js
