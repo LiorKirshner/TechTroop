@@ -1,4 +1,3 @@
-const apiKey = "YOUR_API_KEY"; // שים פה את המפתח שלך
 const searchTerm = "cats";
 
 $.ajax({
