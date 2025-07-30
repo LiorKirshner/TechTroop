@@ -2,8 +2,10 @@ const fetch = function (queryValue, queryType = "isbn") {
   $.ajax({
     method: "GET",
     url: `https://www.googleapis.com/books/v1/volumes?q=${queryType}:${queryValue}`,
+
     success: function (data) {
       if (!data.items || data.items.length === 0) {
+        console.log(url);
         $("body").append(`<p>No books found.</p>`);
         return;
       }
