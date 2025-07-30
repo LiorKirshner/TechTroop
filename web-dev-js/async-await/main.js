@@ -29,8 +29,8 @@ async function getUserWithPosts(userId) {
       `https://jsonplaceholder.typicode.com/users/${userId}`
     );
     if (!userData.ok) {
+      //If user doesn't exist, don't attempt to fetch posts.
       throw new Error("User not found");
-      return userId;
     }
 
     let userPosts = await fetch(
@@ -49,5 +49,64 @@ async function getUserWithPosts(userId) {
     return { user, posts };
   } catch (error) {
     console.error("Error fetching :", error.message);
+  }
+}
+
+async function createDashboardSummary() {
+  try {
+    const [users, posts, comments] = await Promise.all([
+      fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
+        res.json()
+      ),
+      fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
+        res.json()
+      ),
+      fetch("https://jsonplaceholder.typicode.com/comments").then((res) =>
+        res.json()
+      ),
+    ]);
+
+    // סיכום כללי
+    const summary = {
+      totalUsers: users.length,
+      totalPosts: posts.length,
+      totalComments: comments.length,
+      avgPostsPerUser: +(posts.length / users.length).toFixed(2),
+      avgCommentsPerPost: +(comments.length / posts.length).toFixed(2),
+    };
+
+    // מפות עזר
+    const postCommentsMap = {};
+    comments.forEach((comment) => {
+      postCommentsMap[comment.postId] =
+        (postCommentsMap[comment.postId] || 0) + 1;
+    });
+
+    // topUsers
+    const topUsers = users
+      .map((user) => {
+        const userPosts = posts.filter((p) => p.userId === user.id);
+        const postCount = userPosts.length;
+        const commentCount = userPosts.reduce(
+          (sum, post) => sum + (postCommentsMap[post.id] || 0),
+          0
+        );
+        return { name: user.name, postCount, commentCount };
+      })
+      .sort((a, b) => b.postCount - a.postCount)
+      .slice(0, 3);
+
+    // recentPosts
+    const recentPosts = posts.sort((a, b) => b.id - a.id).slice(0, 5);
+
+    // תוצאה סופית
+    return {
+      summary,
+      topUsers,
+      recentPosts,
+    };
+  } catch (error) {
+    console.error("Failed to build dashboard:", error.message);
+    return null;
   }
 }
