@@ -100,6 +100,33 @@ async function createDashboardSummary() {
     const recentPosts = posts.sort((a, b) => b.id - a.id).slice(0, 5);
 
     // תוצאה סופית
+    $("#getUserById").append(`
+      <div>
+        <h3>📊 Summary</h3>
+        <p>Total Users: ${summary.totalUsers}</p>
+        <p>Total Posts: ${summary.totalPosts}</p>
+        <p>Total Comments: ${summary.totalComments}</p>
+        <p>Avg Posts per User: ${summary.avgPostsPerUser}</p>
+        <p>Avg Comments per Post: ${summary.avgCommentsPerPost}</p>
+
+        <h3>👑 Top Users</h3>
+        <ul>
+          ${topUsers
+            .map(
+              (u) =>
+                `<li>${u.name} - ${u.postCount} posts, ${u.commentCount} comments</li>`
+            )
+            .join("")}
+        </ul>
+
+        <h3>🆕 Recent Posts</h3>
+        <ul>
+          ${recentPosts
+            .map((p) => `<li><strong>${p.title}</strong></li>`)
+            .join("")}
+        </ul>
+      </div>
+    `);
     return {
       summary,
       topUsers,
