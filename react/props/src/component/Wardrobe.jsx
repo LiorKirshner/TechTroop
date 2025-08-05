@@ -9,7 +9,9 @@ const Wardrobe = () => {
     { type: "accessory", color: "lilac", size: "" },
   ];
 
-  return wardrobe.map((c) => <Article info={c} key={c.color + c.type} />);
+  return wardrobe
+    .filter((c) => c.color === "blue")
+    .map((c) => <Article info={c} key={c.color + c.type} />);
 };
 
 export default Wardrobe;
