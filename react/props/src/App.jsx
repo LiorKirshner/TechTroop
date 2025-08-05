@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Company from "./component/Company";
+import Wardrobe from "./component/Wardrobe";
 
 function App() {
   const upperCase = (name) => name.toUpperCase();
@@ -18,6 +19,7 @@ function App() {
       {companies.map((c) => (
         <Company name={c.name} revenue={c.revenue} key={c.name} />
       ))}
+      <Wardrobe />
     </div>
   );
 }
