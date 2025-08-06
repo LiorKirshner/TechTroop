@@ -36,3 +36,116 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+/* כפתורי ניווט */
+.nav-buttons {
+  margin-bottom: 20px;
+}
+
+.nav-button {
+  margin-right: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-button.active {
+  background-color: #007bff;
+}
+
+.nav-button.inactive {
+  background-color: #6c757d;
+}
+
+.discount-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.discount-button.on {
+  background-color: #28a745;
+}
+
+.discount-button.off {
+  background-color: #dc3545;
+}
+
+/* מחוונים */
+.status-info {
+  margin: 10px 0;
+}
+
+.status-info p {
+  margin: 5px 0;
+}
+
+/* עיצוב פריטים */
+.item-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item-title {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.price-original {
+  text-decoration: line-through;
+  color: #999;
+  margin: 5px 0;
+}
+
+.price-discounted {
+  color: #d73527;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.price-regular {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.hottest-badge {
+  color: red;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* עיצוב Landing */
+.landing-container {
+  padding: 20px;
+}
+
+.landing-title {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hottest-item-card {
+  background-color: #ffebee;
+  padding: 10px;
+  border: 2px solid #f44336;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.hottest-item-title {
+  color: #d32f2f;
+  margin: 10px 0;
+}

@@ -25,6 +25,10 @@ const App = () => {
     setData({ ...data, currentPage: pageName });
   };
 
+  const toggleDiscount = () => {
+    setData({ ...data, shouldDiscount: !data.shouldDiscount });
+  };
+
   return (
     <>
       <div className="ex-space">
@@ -36,26 +40,35 @@ const App = () => {
         <h4 className="ex-title">Exercise 2 - Store Navigation</h4>
         <div className="exercise" id="ex2">
           {/* Navigation Buttons */}
-          <div style={{ marginBottom: "20px" }}>
+          <div className="nav-buttons">
             <button
               onClick={() => changePage("Landing")}
-              style={{
-                backgroundColor:
-                  data.currentPage === "Landing" ? "#007bff" : "#6c757d",
-                marginRight: "10px",
-              }}
+              className={`nav-button ${
+                data.currentPage === "Landing" ? "active" : "inactive"
+              }`}
             >
               Landing Page
             </button>
             <button
               onClick={() => changePage("Home")}
-              style={{
-                backgroundColor:
-                  data.currentPage === "Home" ? "#007bff" : "#6c757d",
-              }}
+              className={`nav-button ${
+                data.currentPage === "Home" ? "active" : "inactive"
+              }`}
             >
               Store Home
             </button>
+
+            {/* כפתור הנחה רק במצב Store */}
+            {data.currentPage === "Home" && (
+              <button
+                onClick={toggleDiscount}
+                className={`discount-button ${
+                  data.shouldDiscount ? "on" : "off"
+                }`}
+              >
+                {data.shouldDiscount ? "Discounts ON" : "Discounts OFF"}
+              </button>
+            )}
           </div>
 
           {/* Conditional Rendering */}
@@ -66,7 +79,9 @@ const App = () => {
             />
           )}
 
-          {data.currentPage === "Home" && <Home store={data.store} />}
+          {data.currentPage === "Home" && (
+            <Home store={data.store} shouldDiscount={data.shouldDiscount} />
+          )}
         </div>
       </div>
     </>

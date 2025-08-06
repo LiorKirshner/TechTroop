@@ -2,11 +2,11 @@ import React from "react";
 
 const Landing = ({ name, hottestItem }) => {
   return (
-    <div>
-      <h2>Welcome {name}!</h2>
+    <div className="landing-container">
+      <h2 className="landing-title">Welcome {name}!</h2>
       {hottestItem && (
-        <div>
-          <h3>🔥 Hottest Item in Store!</h3>
+        <div className="hottest-item-card">
+          <h3 className="hottest-item-title">🔥 Hottest Item in Store!</h3>
           <p>
             <strong>{hottestItem.item}</strong>
           </p>

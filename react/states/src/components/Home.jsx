@@ -1,11 +1,11 @@
 import React from "react";
 import Item from "./Item";
 
-const Home = ({ store }) => {
+const Home = ({ store, shouldDiscount }) => {
   return (
     <div>
       {store.map((item, index) => (
-        <Item key={index} item={item} />
+        <Item key={index} item={item} shouldDiscount={shouldDiscount} />
       ))}
     </div>
   );
