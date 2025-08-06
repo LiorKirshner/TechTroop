@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Landing from "./components/Landing";
 
 const App = () => {
-  const [data] = useState({
+  const [data, setData] = useState({
     user: "Robyn",
     store: [
       { item: "XSPS Pro Player", price: 800, discount: 0.2, hottest: false },
@@ -21,6 +21,10 @@ const App = () => {
     currentPage: "Landing",
   });
 
+  const changePage = (pageName) => {
+    setData({ ...data, currentPage: pageName });
+  };
+
   return (
     <>
       <div className="ex-space">
@@ -29,13 +33,41 @@ const App = () => {
         <Hudini />
       </div>
       <div className="ex-space">
-        <h4 className="ex-title">Exercise 2 - Store</h4>
-        <div className="exercise" id="ex2"></div>
-        <Landing
-          name={data.user}
-          hottestItem={data.store.find((item) => item.hottest)}
-        />
-        <Home store={data.store} />
+        <h4 className="ex-title">Exercise 2 - Store Navigation</h4>
+        <div className="exercise" id="ex2">
+          {/* Navigation Buttons */}
+          <div style={{ marginBottom: "20px" }}>
+            <button
+              onClick={() => changePage("Landing")}
+              style={{
+                backgroundColor:
+                  data.currentPage === "Landing" ? "#007bff" : "#6c757d",
+                marginRight: "10px",
+              }}
+            >
+              Landing Page
+            </button>
+            <button
+              onClick={() => changePage("Home")}
+              style={{
+                backgroundColor:
+                  data.currentPage === "Home" ? "#007bff" : "#6c757d",
+              }}
+            >
+              Store Home
+            </button>
+          </div>
+
+          {/* Conditional Rendering */}
+          {data.currentPage === "Landing" && (
+            <Landing
+              name={data.user}
+              hottestItem={data.store.find((item) => item.hottest)}
+            />
+          )}
+
+          {data.currentPage === "Home" && <Home store={data.store} />}
+        </div>
       </div>
     </>
   );
