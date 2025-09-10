@@ -19,5 +19,11 @@
   "homepage": "https://github.com/LiorKirshner/TechTroop#readme",
   "devDependencies": {
     "jest": "^30.0.4"
+  },
+  "dependencies": {
+    "expres": "^0.0.5",
+    "express": "^5.1.0",
+    "install": "^0.13.0",
+    "npm": "^11.6.0"
   }
 }
